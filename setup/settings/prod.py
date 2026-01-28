@@ -2,7 +2,7 @@ from .base import *
 import os
 from pathlib import Path
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
