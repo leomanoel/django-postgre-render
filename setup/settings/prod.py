@@ -44,6 +44,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 # ⚠️ IMPORTANTE:
 # - NÃO redefinir "default"
 # - apenas sobrescrever staticfiles
+STORAGES = {}
 STORAGES["staticfiles"] = {
     "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
 }
