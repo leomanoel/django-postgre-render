@@ -420,11 +420,7 @@ table {
     border: #f5c2c7;
 }
 
-.alert-error {
-    background-color: #842029;
-    color: #f8d7da;
-    border: #f5c2c7;
-} 
+
 .row {
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
@@ -689,5 +685,11 @@ table {
     border-color: #dc3545;
 }
 
+
+.alert-error {
+    background-color: #842029;
+    color: #f8d7da;
+    border: #f5c2c7;
+} 
 
 /*PUTA QUE O PARIU!!!!!!! */

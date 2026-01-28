@@ -80,14 +80,6 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
-# =========================
-# STORAGE (MEDIA + STATIC)
-# =========================
-STORAGES = {
-    "default": {
-        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
-    },
-    "staticfiles": {
-        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
-    },
-}
+
+
+
