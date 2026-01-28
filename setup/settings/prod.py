@@ -19,5 +19,8 @@ DATABASES = {
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
+# deploy render
+
+
 
 
