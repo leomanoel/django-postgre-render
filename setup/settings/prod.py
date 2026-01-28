@@ -2,6 +2,8 @@ from .base import *
 import os
 from pathlib import Path
 
+
+
 DEBUG = False
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
@@ -38,7 +40,8 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
   
 
-# deploy render
+
+
 
 
 

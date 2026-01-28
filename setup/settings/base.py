@@ -56,10 +56,23 @@ USE_I18N = True
 USE_TZ = True
 
 # 🔥 STATIC FILES (BASE / PRODUÇÃO)
-STATIC_URL = "/static/"
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STORAGES = {
+    "default": {
+        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
+}
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+#STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+INSTALLED_APPS += [
+    "cloudinary",
+    "cloudinary_storage",
+]
+
 
 
 
