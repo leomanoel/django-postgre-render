@@ -41,11 +41,9 @@ DATABASES = {
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
-# ⚠️ PRODUÇÃO:
-# - static → WhiteNoise
-# - media → Cloudinary (vem do base.py)
-STORAGES = {
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    }
+# ⚠️ IMPORTANTE:
+# - NÃO redefinir "default"
+# - apenas sobrescrever staticfiles
+STORAGES["staticfiles"] = {
+    "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
 }
