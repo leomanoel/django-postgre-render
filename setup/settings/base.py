@@ -8,6 +8,9 @@ DEBUG = False
 
 ALLOWED_HOSTS = []
 
+# =========================
+# APPS
+# =========================
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -23,6 +26,9 @@ INSTALLED_APPS = [
     'cloudinary_storage',
 ]
 
+# =========================
+# MIDDLEWARE
+# =========================
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -34,6 +40,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# =========================
+# URLS / TEMPLATES
+# =========================
 ROOT_URLCONF = 'setup.urls'
 
 TEMPLATES = [
@@ -54,21 +63,31 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'setup.wsgi.application'
 
+# =========================
+# LOCALE
+# =========================
 LANGUAGE_CODE = 'pt-br'
 TIME_ZONE = 'America/Sao_Paulo'
 USE_I18N = True
 USE_TZ = True
 
 # =========================
-# STATIC FILES (BASE)
+# STATIC FILES (CSS, JS, IMAGENS FIXAS)
 # =========================
-
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
-# ❌ NÃO define STATIC_ROOT aqui
-# ❌ NÃO define STORAGES aqui
-# ❌ NÃO define STATICFILES_STORAGE aqui
+# =========================
+# STORAGE (MEDIA + STATIC)
+# =========================
+STORAGES = {
+    "default": {
+        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
+}
