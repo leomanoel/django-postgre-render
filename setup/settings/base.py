@@ -15,13 +15,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-     'apps.galeria',
+
+    'apps.galeria',
     'apps.usuarios',
+
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -55,26 +59,16 @@ TIME_ZONE = 'America/Sao_Paulo'
 USE_I18N = True
 USE_TZ = True
 
-# 🔥 STATIC FILES (BASE / PRODUÇÃO)
-STORAGES = {
-    "default": {
-        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
-    },
-    "staticfiles": {
-        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
-    },
-}
+# =========================
+# STATIC FILES (BASE)
+# =========================
 
+STATIC_URL = '/static/'
 
-#STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
-INSTALLED_APPS += [
-    "cloudinary",
-    "cloudinary_storage",
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
 ]
 
-
-
-
-
-
+# ❌ NÃO define STATIC_ROOT aqui
+# ❌ NÃO define STORAGES aqui
+# ❌ NÃO define STATICFILES_STORAGE aqui
