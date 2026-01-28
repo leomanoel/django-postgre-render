@@ -2,13 +2,14 @@ from .base import *
 import os
 from pathlib import Path
 
-
-
 DEBUG = False
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
 ALLOWED_HOSTS = ["*"]
 
+# =========================
+# MIDDLEWARE
+# =========================
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
@@ -20,6 +21,9 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+# =========================
+# DATABASE
+# =========================
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
@@ -31,8 +35,9 @@ DATABASES = {
     }
 }
 
-
-
+# =========================
+# STATIC FILES (PRODUÇÃO)
+# =========================
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
@@ -44,6 +49,7 @@ STORAGES = {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
     },
 }
+
   
 
 
